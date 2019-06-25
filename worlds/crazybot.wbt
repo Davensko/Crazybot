@@ -2,12 +2,90 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.9293033423024526 0.3534704064683645 0.10702322054853314 0.5668901169942436
-  position 2.9411016567994066 4.252272962678003 7.277986319558777
+  orientation -0.017214894344134254 0.9873673264679962 0.15751003154136453 2.8878429755417927
+  position 0.23975358682397063 0.6558558579718085 -1.279650596333902
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 Floor {
+}
+Robot {
+  translation 0 0.2 0
+  children [
+    DEF SH_BODY Group {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.8 0 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.25 0.08 0.1
+          }
+        }
+        Transform {
+          translation 0.1075 -0.0575 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.9294117647058824 0.8313725490196079 0
+                roughness 1
+                metalness 0
+              }
+              geometry Sphere {
+                radius 0.0175
+              }
+            }
+          ]
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.05 0 0.065
+      }
+      endPoint Solid {
+        translation -0.05 0 0.065
+        rotation 1 0 0 1.5708
+        children [
+          DEF SH_WHEEL Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.075
+            }
+          }
+        ]
+        boundingObject USE SH_WHEEL
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.05 0 -0.065
+      }
+      endPoint Solid {
+        translation -0.05 0 -0.065
+        rotation 1 0 0 1.5707996938995747
+        children [
+          USE SH_WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE SH_WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  boundingObject USE SH_BODY
+  physics Physics {
+  }
 }
