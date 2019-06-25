@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.017214894344134254 0.9873673264679962 0.15751003154136453 2.8878429755417927
-  position 0.23975358682397063 0.6558558579718085 -1.279650596333902
+  orientation -0.016557129424780735 0.9950250941387853 0.09823911389722825 2.746925420853574
+  position 0.2924935287645702 0.3585098441851033 -1.1741545436039773
 }
 TexturedBackground {
 }
@@ -12,7 +12,7 @@ TexturedBackgroundLight {
 Floor {
 }
 Robot {
-  translation 0 0.2 0
+  translation 0 0.075 0
   children [
     DEF SH_BODY Group {
       children [
@@ -45,6 +45,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
+        axis 0 0 1
         anchor -0.05 0 0.065
       }
       endPoint Solid {
@@ -70,11 +71,12 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
+        axis 0 0 1
         anchor -0.05 0 -0.065
       }
       endPoint Solid {
         translation -0.05 0 -0.065
-        rotation 1 0 0 1.5707996938995747
+        rotation 1 0 0 1.5707996938995745
         children [
           USE SH_WHEEL
         ]
