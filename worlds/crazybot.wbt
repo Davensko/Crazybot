@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.016557129424780735 0.9950250941387853 0.09823911389722825 2.746925420853574
-  position 0.2924935287645702 0.3585098441851033 -1.1741545436039773
+  orientation -0.19102517249520246 -0.9657981886307941 -0.17533750970814777 1.5540533031122417
+  position -1.3004730235372846 0.7366141759291464 0.10663639716384658
 }
 TexturedBackground {
 }
@@ -48,6 +48,13 @@ Robot {
         axis 0 0 1
         anchor -0.05 0 0.065
       }
+      device [
+        RotationalMotor {
+          name "motor_right"
+          maxVelocity 523.599
+          maxPosition 0.03
+        }
+      ]
       endPoint Solid {
         translation -0.05 0 0.065
         rotation 1 0 0 1.5708
@@ -74,6 +81,13 @@ Robot {
         axis 0 0 1
         anchor -0.05 0 -0.065
       }
+      device [
+        RotationalMotor {
+          name "motor_left"
+          maxVelocity 523.599
+          maxTorque 0.03
+        }
+      ]
       endPoint Solid {
         translation -0.05 0 -0.065
         rotation 1 0 0 1.5707996938995745
