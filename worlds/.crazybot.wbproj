@@ -8,4 +8,4 @@ selectionDisabled: 0
 viewpointLocked: 0
 orthographicViewHeight: 1
 textFiles: 0 "controllers/crazybot/crazybot.c"
-globalOptionalRendering: CoordinateSystem
+globalOptionalRendering: CoordinateSystem::DistanceSensorRays

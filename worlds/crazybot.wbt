@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.4544024859548192 -0.8759386291011049 -0.16201820517015222 5.510044305850898
-  position 0.9620642487698217 0.5332638075146569 1.1087998462449504
+  orientation 0.32096052066801106 -0.9373547752560569 -0.13546353559975713 5.4370391556123545
+  position 2.4305742263406573 1.529042344230408 2.843848977510401
 }
 TexturedBackground {
 }
@@ -51,8 +51,12 @@ Robot {
       device [
         RotationalMotor {
           name "motor_right"
-          maxVelocity 523.599
-          maxPosition 0.03
+          maxVelocity 52.359877499999996
+          maxTorque 0.59317
+        }
+        PositionSensor {
+          name "position_sensor_right"
+          resolution 0.005235983
         }
       ]
       endPoint Solid {
@@ -84,8 +88,12 @@ Robot {
       device [
         RotationalMotor {
           name "motor_left"
-          maxVelocity 523.599
-          maxTorque 0.03
+          maxVelocity 52.3599
+          maxTorque 0.59317
+        }
+        PositionSensor {
+          name "position_sensor_left"
+          resolution 0.00523598
         }
       ]
       endPoint Solid {
@@ -114,12 +122,14 @@ Robot {
           }
         }
       ]
+      name "distance_sensor"
       boundingObject USE Sen
       lookupTable [
         0 0 0
         0.02 0 0
         5 1660 0
       ]
+      resolution 1
     }
   ]
   boundingObject USE SH_BODY
