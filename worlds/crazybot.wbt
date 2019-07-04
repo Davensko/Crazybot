@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.32096052066801106 -0.9373547752560569 -0.13546353559975713 5.4370391556123545
-  position 2.4305742263406573 1.529042344230408 2.843848977510401
+  orientation 0.35044153985650767 -0.9333196435446259 -0.0781355880296047 5.814189837386369
+  position 0.9415339743573068 0.5246920334236671 1.7030044582347852
 }
 TexturedBackground {
 }
@@ -55,7 +55,7 @@ Robot {
           maxTorque 0.59317
         }
         PositionSensor {
-          name "position_sensor_right"
+          name "sensor_right"
           resolution 0.005235983
         }
       ]
@@ -92,7 +92,7 @@ Robot {
           maxTorque 0.59317
         }
         PositionSensor {
-          name "position_sensor_left"
+          name "sensor_left"
           resolution 0.00523598
         }
       ]
@@ -135,4 +135,5 @@ Robot {
   boundingObject USE SH_BODY
   physics Physics {
   }
+  controller "crazybot"
 }
