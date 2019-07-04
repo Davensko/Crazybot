@@ -37,6 +37,8 @@ int main(int argc, char **argv)
   wb_keyboard_enable(TIME_STEP); 
   
   double lin_vel;
+  double lin_vel2;
+  double vel_prom;
   //double dis_sen;
   double vel = 0;
   double rpm;
@@ -155,11 +157,17 @@ int main(int argc, char **argv)
      rpm= (diference*60)/(2*pi)*-1;
      rpm2= (diference2*60)/(2*pi)*-1;
      
-     lin_vel=diference*radio*-1; 
+     lin_vel=diference*radio*-1;
+     lin_vel2=diference2*radio*-1; 
+     
+     vel_prom= (lin_vel+lin_vel2)/2; 
+     
+     
+     
      
      //lin_vel= (((2*pi)*radio)/60)*rpm;
      
-     printf("Linear velocity: %lf\n", lin_vel);
+     printf("Linear velocity: %lf\n", vel_prom);
      printf("RPM left: %lf\n", rpm);
      printf("RPM right: %lf\n", rpm2);
      //printf("Angular velocity left: %lf\n", diference);
