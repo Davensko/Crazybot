@@ -13,9 +13,9 @@
 #include <webots/robot.h>
 #include <webots/motor.h>
 #include <webots/keyboard.h>
-
-#include <webots/distance_sensor.h>
 #include <webots/position_sensor.h>
+#include <webots/distance_sensor.h>
+
 
 #include <stdio.h>
 
@@ -88,6 +88,7 @@ int main(int argc, char **argv)
   
 
      int key = wb_keyboard_get_key(); 
+     int stop; 
      
      
       double initial,diference; 
@@ -103,7 +104,7 @@ int main(int argc, char **argv)
      
      
     if (key==WB_KEYBOARD_UP){
-     
+     stop=key; 
      vel = 40; 
     
      wb_motor_set_position(wheel_left, INFINITY);
@@ -112,6 +113,22 @@ int main(int argc, char **argv)
      wb_motor_set_velocity(wheel_right, -vel);
   
      }
+     
+     
+     
+     if (stop != key){
+      
+     wb_motor_set_position(wheel_left, INFINITY);
+     wb_motor_set_velocity(wheel_left, 0);
+     wb_motor_set_position(wheel_right, INFINITY);
+     wb_motor_set_velocity(wheel_right, 0);
+    
+     }  
+     
+     
+     
+     
+     
      
      if (key==WB_KEYBOARD_DOWN){
      
@@ -144,7 +161,7 @@ int main(int argc, char **argv)
      wb_motor_set_velocity(wheel_right, -vel);
     
      }
-          
+     /*     
      if (key==WB_KEYBOARD_END){
       
      
@@ -153,7 +170,8 @@ int main(int argc, char **argv)
      wb_motor_set_position(wheel_right, INFINITY);
      wb_motor_set_velocity(wheel_right, 0);
     
-     }      
+     }
+     */      
      rpm= (diference*60)/(2*pi)*-1;
      rpm2= (diference2*60)/(2*pi)*-1;
      
